@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-
+//Ronal 
 // config public
 app.use(express.static(path.resolve(__dirname, '../public')))
 
