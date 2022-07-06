@@ -13,6 +13,7 @@ app.use(bodyParser.json())
 
 //Ronal
 //Jose Q. 
+//Jorge Lagos
 // config public
 app.use(express.static(path.resolve(__dirname, '../public')))
 
