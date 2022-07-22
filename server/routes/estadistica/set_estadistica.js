@@ -15,11 +15,11 @@ router.post('/ins_estadistica', (req,res)=>{
         ,tiempo_generar_estadistica,cod_usuario} = req.body;
         const sql = "CALL Ins_Estadisticas(?,?,?,?,?,?,?,?,?,?)"
 
-        if(!contains_data(nom_pais)){
+        if(!contains_data(titulo_estadistica)){
             return res.status(400).json({
                 ok: false,
                 err:{
-                    message: 'No Valido.'
+                    message: 'Titulo No Valido.'
                 }
             })
         }
