@@ -17,8 +17,6 @@ for( i=0; i < MiItems.length; i++){
         '<td>'+ MiItems[i].FECHA_ENTREGA +'</td>'+
         '<td>'+ MiItems[i].ESTADO +'</td>'+
         '<td>'+ 
-        '<button class="btn btn-outline-secondary" onclick="CargarPedidoID('+ MiItems[i].ID +')">Editar</button>'+ 
-        '<button class="btn btn-outline-danger" onclick="EliminarPedido('+ MiItems[i].ID +')">Eliminar</button>'
         '</td>'+ 
     '</tr>'; 
     $('.Pedidos').html(Valores);
