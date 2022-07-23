@@ -55,6 +55,65 @@ router.get('/estadistica', (req, res) =>{
 
 })
 
+// Get All EstadisticaDesplegado
+router.get('/estadistica_desplegado', (req, res) =>{
+    const sql = 'CALL GetAll_EstadisticasDesplegado()'
+  
+      Conexion.query(sql, (err, result) =>{
+          if(err){
+              return res.status(500).json({
+                  ok: false,
+                  err
+              })
+          }
+          res.json({
+              ok: true,
+              result: result[0]
+          })
+      })
+  
+  })
+
+  // Get One EstadisticaDesplegado
+router.get('/estadistica_desplegado:cod_estadistica', (req, res) =>{
+    const {cod_estadistica} = req.params
+    const sql = 'CALL GetOne_EstadisticasDesplegado()'
+  
+      Conexion.query(sql, (err, result) =>{
+          if(err){
+              return res.status(500).json({
+                  ok: false,
+                  err
+              })
+          }
+          res.json({
+              ok: true,
+              result: result[0]
+          })
+      })
+  
+  })
+
+    // Get One Estadistica
+router.get('/estadistica:cod_estadistica', (req, res) =>{
+    const {cod_estadistica} = req.params
+    const sql = 'CALL GetOne_Estadisticas()'
+  
+      Conexion.query(sql, (err, result) =>{
+          if(err){
+              return res.status(500).json({
+                  ok: false,
+                  err
+              })
+          }
+          res.json({
+              ok: true,
+              result: result[0]
+          })
+      })
+  
+  })
+
 
 //UpDate Estadistica
 router.put('/upt_estadistica:cod_estadistica',(req, res)=>{

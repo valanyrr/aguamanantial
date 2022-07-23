@@ -9,21 +9,21 @@ const Conexion = require('../../config/dbconnect')
 const router = require('express').Router()
 
 
-// Insert Pais
-router.post('/pais', (req, res) =>{
-    const {nom_pais} = req.body;
-    const sql = "CALL Ins_Pais(?)"
+// Insert departamento
+router.post('/departamento', (req, res) =>{
+    const {nom_depto} = req.body;
+    const sql = "CALL Ins_Departamento(?)"
 
-    if(!contains_data(nom_pais)){
+    if(!contains_data(nom_depto)){
         return res.status(400).json({
             ok: false,
             err:{
-                message: 'Nombre de pais no valido.'
+                message: 'Nombre de Departamento no valido.'
             }
         })
     }
    
-    Conexion.query(sql, nom_pais, (err, result) =>{
+    Conexion.query(sql, nom_depto, (err, result) =>{
         if(err) throw err
 
         res.json({
@@ -34,31 +34,9 @@ router.post('/pais', (req, res) =>{
 })
 
 
-// Get All Pais
-router.get('/pais', (req, res) =>{
-
-    const sql = 'CALL GetAll_Pais()'
-
-    Conexion.query(sql, (err, result) =>{
-        if(err){
-            return res.status(500).json({
-                ok: false,
-                err
-            })
-        }
-
-        res.json({
-            ok: true,
-            result: result[0]
-        })
-    })
-
-})
-
-// Get One Pais
-router.get('/pais_one:cod_pais', (req, res) =>{
-    const {cod_pais} = req.params
-    const sql = 'CALL GetOne_Pais()'
+// Get All Departamento
+router.get('/departamento', (req, res) =>{
+    const sql = 'CALL GetAll_Departamento()'
 
     Conexion.query(sql, (err, result) =>{
         if(err){
@@ -76,22 +54,43 @@ router.get('/pais_one:cod_pais', (req, res) =>{
 
 })
 
-// UpDate Pais
-router.post('/pais:cod_pais', (req, res) =>{
-    const {nom_pais} = req.body;
-    const {cod_pais} = req.params
-    const sql = "CALL Ins_Pais(?)"
+// Get One Departamento
+router.get('/departamento_one:cod_depto', (req, res) =>{
+    const {cod_depto} = req.params
+    const sql = 'CALL GetOne_Departamento()'
 
-    if(!contains_data(nom_pais)){
+    Conexion.query(sql, (err, result) =>{
+        if(err){
+            return res.status(500).json({
+                ok: false,
+                err
+            })
+        }
+
+        res.json({
+            ok: true,
+            result: result[0]
+        })
+    })
+
+})
+
+// UpDate Departamento
+router.post('/departamento:cod_depto', (req, res) =>{
+    const {nom_depto} = req.body;
+    const {cod_depto} = req.params
+    const sql = "CALL Ins_Departamento(?)"
+
+    if(!contains_data(nom_depto)){
         return res.status(400).json({
             ok: false,
             err:{
-                message: 'Nombre de pais no valido.'
+                message: 'Nombre de Departamento no valido.'
             }
         })
     }
    
-    Conexion.query(sql, nom_pais, (err, result) =>{
+    Conexion.query(sql, nom_depto, (err, result) =>{
         if(err) throw err
 
         res.json({
