@@ -147,3 +147,7 @@ function verFactura(idUsuario) {
 
 }
     var idDelUser = JSON.stringify(idUser);
+
+    module.exports = router;
+
+    // qwe
