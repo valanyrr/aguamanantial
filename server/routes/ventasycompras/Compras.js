@@ -31,10 +31,6 @@ function CargarFacturas() {
                     '<td>' + MiItems[i].TOTAL + '</td>' +
                     '<td>' + MiItems[i].FECHA_VENCIMIENTO + '</td>' +
                     '<td>' + MiItems[i].ESTADO + '</td>' +
-                    '<td>' + `<button class="btn btn-danger" data-id=${MiItems[i].ID} onclick=eliminarUsuario(${MiItems[i].ID})>Eliminar</button>` + '</td>' +
-                    '<td>' + `<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id=${MiItems[i].ID}>Editar</button>` + '</td>' +
-                    '<td>' + `<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModalVer" onclick=verFactura(${MiItems[i].ID}) data-id=${MiItems[i].ID}>Ver</button>` + '</td>' +
-
                     '</tr>';
 
                 $('.Facturas').html(Valores);
