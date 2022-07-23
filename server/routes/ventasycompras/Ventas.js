@@ -5,7 +5,7 @@ const Conexion = require('../../config/dbconnect')
 const router = require('express').Router()
 
 //insert Venta
-router.post('/Ventas', (req, res) =>{
+router.post('/Ventasycompras', (req, res) =>{
     const {cant_Ventas} = req.body;
     const sql = "CALL Cant_Ventas(?)"
 
@@ -27,3 +27,15 @@ router.post('/Ventas', (req, res) =>{
         })
     })
 })
+
+
+
+
+
+
+
+
+
+module.exports = router;
+
+// qwe
