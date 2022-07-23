@@ -56,7 +56,7 @@ router.get('/estadistica', (req, res) =>{
 })
 
 
-//UdDate Estadistica
+//UpDate Estadistica
 router.put('/upt_estadistica:cod_estadistica',(req, res)=>{
     const {titulo_estadistica,desc_estadistica,url_archivo,formato_estadistica 
         ,correo_electronico,hora_generar_estadistica,tipo_estadistica,ind_estadistica
