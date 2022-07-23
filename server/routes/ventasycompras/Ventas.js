@@ -28,7 +28,26 @@ router.post('/Ventasycompras', (req, res) =>{
     })
 })
 
+// Get ventas
+router.get('/ventas', (req, res) =>{
+    const {cod_depto} = req.params
+    const sql = 'CALL Get_Ventas()'
 
+    Conexion.query(sql, (err, result) =>{
+        if(err){
+            return res.status(500).json({
+                ok: false,
+                err
+            })
+        }
+
+        res.json({
+            ok: true,
+            result: result[0]
+        })
+    })
+
+})
 
 
 
