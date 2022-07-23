@@ -49,6 +49,31 @@ router.get('/ventas', (req, res) =>{
 
 })
 
+// UpDate ventas
+router.post('/ventasycompras', (req, res) =>{
+    const {nom_depto} = req.body;
+    const {cod_depto} = req.params
+    const sql = "CALL Cant_Ventas(?)"
+
+    if(!contains_data(nom_depto)){
+        return res.status(2000).json({
+            ok: false,
+            err:{
+                message: 'cantidades no valido.'
+            }
+        })
+    }
+   
+    Conexion.query(sql, nom_depto, (err, result) =>{
+        if(err) throw err
+
+        res.json({
+            ok: true,
+            result
+        })
+    })
+})
+
 
 
 
