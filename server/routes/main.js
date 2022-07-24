@@ -20,6 +20,19 @@ app.use(require('./empresa/set_empresa'))
 // distribucion
 app.use(require('./distribucion/set_distribucion'))
 
+// reportes
+app.use(require('./reportes/set_reportes'))
+
+// inventario
+app.use(require('./inventario/set_inventario'))
+
+// usuarios
+app.use(require('./usuarios/set_usuarios'))
+
+// login
+app.use(require('./login/login'))
+
+
 // pedido
 app.use(require('./pedidos/set_pedidos'))
 
