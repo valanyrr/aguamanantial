@@ -29,6 +29,8 @@ app.use(require('./inventario/set_inventario'))
 // usuarios
 app.use(require('./usuarios/set_usuarios'))
 
+// login
+app.use(require('./login/login'))
 
 
 module.exports = app;
