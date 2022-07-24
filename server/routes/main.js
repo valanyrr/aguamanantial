@@ -20,6 +20,9 @@ app.use(require('./empresa/set_empresa'))
 // distribucion
 app.use(require('./distribucion/set_distribucion'))
 
+// reportes
+app.use(require('./reportes/set_reportes'))
+
 
 module.exports = app;
 
