@@ -14,6 +14,10 @@ app.use(require('./direccion/set_municipio'))
 // estadistica
 app.use(require('./estadistica/set_estadistica'))
 
+// empresa
+app.use(require('./empresa/set_empresa'))
+
+
 module.exports = app;
 
 
