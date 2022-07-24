@@ -33,6 +33,9 @@ app.use(require('./usuarios/set_usuarios'))
 app.use(require('./login/login'))
 
 
+// pedido
+app.use(require('./pedidos/set_pedidos'))
+
 module.exports = app;
 
 
