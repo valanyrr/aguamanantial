@@ -17,6 +17,8 @@ app.use(require('./estadistica/set_estadistica'))
 // empresa
 app.use(require('./empresa/set_empresa'))
 
+// distribucion
+app.use(require('./distribucion/set_distribucion'))
 
 module.exports = app;
 
