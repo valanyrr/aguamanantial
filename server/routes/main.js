@@ -26,6 +26,9 @@ app.use(require('./reportes/set_reportes'))
 // inventario
 app.use(require('./inventario/set_inventario'))
 
+// usuarios
+app.use(require('./usuarios/set_usuarios'))
+
 
 
 module.exports = app;
